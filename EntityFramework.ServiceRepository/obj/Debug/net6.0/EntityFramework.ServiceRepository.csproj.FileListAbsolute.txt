@@ -1,0 +1,12 @@
+C:\Rakesh\GitHub\entity-framework-unit-test\EntityFramework.ServiceRepository\bin\Debug\net6.0\EntityFramework.ServiceRepository.deps.json
+C:\Rakesh\GitHub\entity-framework-unit-test\EntityFramework.ServiceRepository\bin\Debug\net6.0\EntityFramework.ServiceRepository.dll
+C:\Rakesh\GitHub\entity-framework-unit-test\EntityFramework.ServiceRepository\bin\Debug\net6.0\EntityFramework.ServiceRepository.pdb
+C:\Rakesh\GitHub\entity-framework-unit-test\EntityFramework.ServiceRepository\obj\Debug\net6.0\EntityFramework.ServiceRepository.csproj.AssemblyReference.cache
+C:\Rakesh\GitHub\entity-framework-unit-test\EntityFramework.ServiceRepository\obj\Debug\net6.0\EntityFramework.ServiceRepository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Rakesh\GitHub\entity-framework-unit-test\EntityFramework.ServiceRepository\obj\Debug\net6.0\EntityFramework.ServiceRepository.AssemblyInfoInputs.cache
+C:\Rakesh\GitHub\entity-framework-unit-test\EntityFramework.ServiceRepository\obj\Debug\net6.0\EntityFramework.ServiceRepository.AssemblyInfo.cs
+C:\Rakesh\GitHub\entity-framework-unit-test\EntityFramework.ServiceRepository\obj\Debug\net6.0\EntityFramework.ServiceRepository.csproj.CoreCompileInputs.cache
+C:\Rakesh\GitHub\entity-framework-unit-test\EntityFramework.ServiceRepository\obj\Debug\net6.0\EntityFramework.ServiceRepository.dll
+C:\Rakesh\GitHub\entity-framework-unit-test\EntityFramework.ServiceRepository\obj\Debug\net6.0\refint\EntityFramework.ServiceRepository.dll
+C:\Rakesh\GitHub\entity-framework-unit-test\EntityFramework.ServiceRepository\obj\Debug\net6.0\EntityFramework.ServiceRepository.pdb
+C:\Rakesh\GitHub\entity-framework-unit-test\EntityFramework.ServiceRepository\obj\Debug\net6.0\ref\EntityFramework.ServiceRepository.dll
