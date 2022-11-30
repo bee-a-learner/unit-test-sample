@@ -1,4 +1,6 @@
 using Bogus;
+using Bogus.DataSets;
+using EntityFramework.ServiceRepository;
 using EntityFramework.ServiceRepository.DbModel;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
@@ -7,79 +9,96 @@ using Moq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Sockets;
 using System.Threading.Tasks;
 
-namespace EntityFramework.ServiceRepository.Tests
+namespace EmployeeRepositoryTest
 {
     [TestClass]
-    
-    public class EmployeeRepositoryTests
+    public class EmployeeRepositoryTest
     {
-        Mock<EmployeeDbContext> mockdbContext;
+        List<Employee> stub;
         IEmployeeRepository repository;
 
         [TestInitialize]
-        public void Init()
+        public async Task Init()
         {
-            
-            
-
-            var stub = GenerateData(10);
+             stub = GenerateData(10);
             var data = stub.AsQueryable();
-            //.AsQueryable();
-
-            //NOTE: always use ()=> in the setup for dbcontext
+            var mockdbContext = new Mock<EmployeeDbContext>();
             var mockSet = new Mock<DbSet<Employee>>();
             mockSet.As<IQueryable<Employee>>().Setup(m => m.Provider).Returns(data.Provider);
             mockSet.As<IQueryable<Employee>>().Setup(m => m.ElementType).Returns(data.ElementType);
             mockSet.As<IQueryable<Employee>>().Setup(m => m.Expression).Returns(data.Expression);
-            mockSet.As<IQueryable<Employee>>().Setup(m => m.GetEnumerator()).Returns(()=>data.GetEnumerator());
+            mockSet.As<IQueryable<Employee>>().Setup(m => m.GetEnumerator()).Returns(() => data.GetEnumerator());
+            mockdbContext.Setup(x => x.Employees).Returns(mockSet.Object);
 
-            mockdbContext = new Mock<EmployeeDbContext>();
-            mockdbContext.Setup(c => c.Employees).Returns(mockSet.Object);
-            mockdbContext.Setup(a => a.Set<Employee>()).Returns(mockSet.Object);
-            mockdbContext.Setup(a => a.SaveChanges()).Returns(() => 1);
+            mockdbContext.Setup(x => x.SaveChanges()).Returns(1);
 
             repository = new EmployeeRepository(mockdbContext.Object);
-        }
 
-        [TestMethod()]
-        [Priority(1)]
-        public async Task get_employee_test()
-        {
-            var response = await repository.GetAllEmployee();
-
-            response.Count.Should().Be(10);
-        }
-
-        [TestMethod()]
-        [Priority(2)]
-        public async Task add_new_employee_test()
-        {
-            var employee = GenerateData(1).FirstOrDefault();
-            
-
-            var response = await repository.AddEmployee(employee);
-
-            response.Should().BeTrue();
-
-            //mockSet.Verify(m => m.Add(It.IsAny<Blog>()), Times.Once());
-            //mockContext.Verify(m => m.SaveChanges(), Times.Once());
         }
 
         [TestMethod]
-        [Priority(3)]
-        public async Task update_an_employee_test()
+        [Priority(1)]
+        public async Task add_new_employee_test()
+        {
+            var employee = GenerateData(1);
+            var response =  await repository.AddEmployee(employee.FirstOrDefault());
+
+            response.Should().BeTrue();
+
+        }
+
+
+        [TestMethod]
+        [Priority(2)]
+        public async Task GetAllEmployee_test()
+        {
+            var employee = GenerateData(1);
+            var response = await repository.GetAllEmployee();
+
+            response.Count.Should().Be(10);
+
+        }
+
+
+        [TestMethod]
+        
+        public async Task AddOrUpdateEmployee_add_new_test()
         {
             var employee = GenerateData(1).FirstOrDefault();
-
-
             var response = await repository.AddOrUpdateEmployee(employee);
 
             response.Should().BeTrue();
+
         }
+
+        [TestMethod]
+
+        public async Task AddOrUpdateEmployee_update_test()
+        {
+            var employee = stub.FirstOrDefault();
+            var response = await repository.AddOrUpdateEmployee(employee);
+
+            response.Should().BeTrue();
+
+        }
+
+        [TestMethod]
+
+        public async Task RemoveEmployee_test()
+        {
+            var employee = stub.FirstOrDefault();
+            var response = await repository.RemoveEmployee(employee);
+
+            response.Should().BeTrue();
+
+        }
+
+        //Task<bool> AddEmployee(Employee record);
+        //Task<bool> AddOrUpdateEmployee(Employee record);
+        //Task<List<Employee>> GetAllEmployee();
+        //Task<bool> RemoveEmployee(Employee record);
 
         private List<Employee> GenerateData(int count)
         {
@@ -90,7 +109,7 @@ namespace EntityFramework.ServiceRepository.Tests
                         .RuleFor(c => c.date_of_joining, f => f.Date.Past())
                          .RuleFor(c => c.status, f => "ACTIVE")
                          .RuleFor(c => c.employee_Id, Guid.NewGuid());
-                         
+
             return faker.Generate(count);
 
         }
