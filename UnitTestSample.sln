@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeRepositoryTest", "entity_framework\EmployeeRepositoryTest\EmployeeRepositoryTest.csproj", "{64966B99-7156-4E5E-A301-C5CEEDD6FF33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6E836CDC-20EB-433D-B2E4-7A663CABB2FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityFramework", "EntityFramework", "{EB49253B-1A30-4819-ACED-FB810AFFC907}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFramework.ServiceRepository", "entity_framework\EntityFramework.ServiceRepository\EntityFramework.ServiceRepository.csproj", "{AA6CD717-8EC6-42EF-8589-4282AA15789B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureStorageAccount", "AzureStorageAccount", "{9768BD75-DC37-4786-92ED-ECBC5760F556}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureStorageAccountService", "storage_account\AzureStorageAccountService\AzureStorageAccountService.csproj", "{E2884F34-4B7A-40D5-8D98-149BF86E1A5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureStorageAccountServiceTest", "storage_account\AzureStorageAccountServiceTest\AzureStorageAccountServiceTest.csproj", "{DF4CA4BC-C7D8-4989-9E0D-3C977CFA699A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64966B99-7156-4E5E-A301-C5CEEDD6FF33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64966B99-7156-4E5E-A301-C5CEEDD6FF33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64966B99-7156-4E5E-A301-C5CEEDD6FF33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64966B99-7156-4E5E-A301-C5CEEDD6FF33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA6CD717-8EC6-42EF-8589-4282AA15789B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA6CD717-8EC6-42EF-8589-4282AA15789B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA6CD717-8EC6-42EF-8589-4282AA15789B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA6CD717-8EC6-42EF-8589-4282AA15789B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2884F34-4B7A-40D5-8D98-149BF86E1A5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2884F34-4B7A-40D5-8D98-149BF86E1A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2884F34-4B7A-40D5-8D98-149BF86E1A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2884F34-4B7A-40D5-8D98-149BF86E1A5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF4CA4BC-C7D8-4989-9E0D-3C977CFA699A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF4CA4BC-C7D8-4989-9E0D-3C977CFA699A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF4CA4BC-C7D8-4989-9E0D-3C977CFA699A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF4CA4BC-C7D8-4989-9E0D-3C977CFA699A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{64966B99-7156-4E5E-A301-C5CEEDD6FF33} = {EB49253B-1A30-4819-ACED-FB810AFFC907}
+		{AA6CD717-8EC6-42EF-8589-4282AA15789B} = {EB49253B-1A30-4819-ACED-FB810AFFC907}
+		{E2884F34-4B7A-40D5-8D98-149BF86E1A5C} = {9768BD75-DC37-4786-92ED-ECBC5760F556}
+		{DF4CA4BC-C7D8-4989-9E0D-3C977CFA699A} = {9768BD75-DC37-4786-92ED-ECBC5760F556}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B39A5E13-2BCA-447F-8869-DD5867F608DF}
+	EndGlobalSection
+EndGlobal
